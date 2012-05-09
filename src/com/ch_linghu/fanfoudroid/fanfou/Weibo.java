@@ -113,20 +113,21 @@ public class Weibo extends WeiboSupport implements java.io.Serializable {
 	 */
 	public User login(String username, String password) throws HttpException {
 		Log.d(TAG, "Login attempt for " + username);
-		http.setCredentials(username, password);
-
-		try {
-			// 进行XAuth认证。
-			((XAuthClient) http.getOAuthClient()).retrieveAccessToken(username, password);
-		} catch (Exception e) {
-			// TODO: XAuth认证不管是userName/password错，还是appKey错都是返回401 unauthorized
-			// 但是会返回一个xml格式的error信息，格式如下：
-			// <hash><request></request><error></error></hash>
-			throw new HttpAuthException(e.getMessage(), e);
-		}
-		// FIXME: 这里重复进行了认证，为历史遗留原因, 留下的唯一原因时该方法需要返回一个User实例
-	   User user = verifyCredentials(); // Verify userName and password
-
+//		http.setCredentials(username, password);
+//
+//		try {
+//			// 进行XAuth认证。
+//			((XAuthClient) http.getOAuthClient()).retrieveAccessToken(username, password);
+//		} catch (Exception e) {
+//			// TODO: XAuth认证不管是userName/password错，还是appKey错都是返回401 unauthorized
+//			// 但是会返回一个xml格式的error信息，格式如下：
+//			// <hash><request></request><error></error></hash>
+//			throw new HttpAuthException(e.getMessage(), e);
+//		}
+//		// FIXME: 这里重复进行了认证，为历史遗留原因, 留下的唯一原因时该方法需要返回一个User实例
+//	   User user = verifyCredentials(); // Verify userName and password
+		User user = verifyCredentials();
+		
 		return user;
 	}
 
@@ -1691,8 +1692,10 @@ public class Weibo extends WeiboSupport implements java.io.Serializable {
 	 *      href="http://code.google.com/p/fanfou-api/wiki/ApiDocumentation"</a>
 	 */
 	public User verifyCredentials() throws HttpException {
-		return new User(get(getBaseURL() + "account/verify_credentials.json",
-				true).asJSONObject());
+//		return new User(get(getBaseURL() + "account/verify_credentials.json",
+//				true).asJSONObject());
+		
+		return new User();
 	}
 
 	/* Saved Searches Methods */

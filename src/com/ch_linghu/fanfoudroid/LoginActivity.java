@@ -220,13 +220,11 @@ public class LoginActivity extends Activity {
 
 	private void onLoginBegin() {
 		disableLogin();
-		TaskFeedback.getInstance(TaskFeedback.DIALOG_MODE, LoginActivity.this)
-				.start(getString(R.string.login_status_logging_in));
+		TaskFeedback.getInstance(TaskFeedback.DIALOG_MODE, LoginActivity.this).start(getString(R.string.login_status_logging_in));
 	}
 
 	private void onLoginSuccess() {
-		TaskFeedback.getInstance(TaskFeedback.DIALOG_MODE, LoginActivity.this)
-				.success("");
+		TaskFeedback.getInstance(TaskFeedback.DIALOG_MODE, LoginActivity.this).success("");
 		updateProgress("");
 		mUsernameEdit.setText("");
 		mPasswordEdit.setText("");
@@ -255,8 +253,7 @@ public class LoginActivity extends Activity {
 		}
 
 		// 发送消息给widget_small
-		Intent reflogin2 = new Intent(this.getBaseContext(),
-				FanfouWidgetSmall.class);
+		Intent reflogin2 = new Intent(this.getBaseContext(),FanfouWidgetSmall.class);
 		reflogin2.setAction("android.appwidget.action.APPWIDGET_UPDATE");
 		PendingIntent l2 = PendingIntent.getBroadcast(this.getBaseContext(), 0,
 				reflogin2, PendingIntent.FLAG_UPDATE_CURRENT);

@@ -48,23 +48,18 @@ public class Configuration {
 		defaultProperty.setProperty("fanfoudroid.debug", "true");
 		defaultProperty.setProperty("fanfoudroid.source", "fanfoudroid");
 		// defaultProperty.setProperty("fanfoudroid.clientVersion","");
-		defaultProperty.setProperty("fanfoudroid.clientURL",
-				"http://sandin.tk/fanfoudroid.xml");
-		defaultProperty.setProperty("fanfoudroid.http.userAgent",
-				"fanfoudroid 1.0");
+		defaultProperty.setProperty("fanfoudroid.clientURL","http://sandin.tk/fanfoudroid.xml");
+		defaultProperty.setProperty("fanfoudroid.http.userAgent","fanfoudroid 1.0");
 		// defaultProperty.setProperty("fanfoudroid.user","");
 		// defaultProperty.setProperty("fanfoudroid.password","");
 		defaultProperty.setProperty("fanfoudroid.http.useSSL", "false");
 		// defaultProperty.setProperty("fanfoudroid.http.proxyHost","");
-		defaultProperty.setProperty("fanfoudroid.http.proxyHost.fallback",
-				"http.proxyHost");
+		defaultProperty.setProperty("fanfoudroid.http.proxyHost.fallback","http.proxyHost");
 		// defaultProperty.setProperty("fanfoudroid.http.proxyUser","");
 		// defaultProperty.setProperty("fanfoudroid.http.proxyPassword","");
 		// defaultProperty.setProperty("fanfoudroid.http.proxyPort","");
-		defaultProperty.setProperty("fanfoudroid.http.proxyPort.fallback",
-				"http.proxyPort");
-		defaultProperty.setProperty("fanfoudroid.http.connectionTimeout",
-				"20000");
+		defaultProperty.setProperty("fanfoudroid.http.proxyPort.fallback","http.proxyPort");
+		defaultProperty.setProperty("fanfoudroid.http.connectionTimeout","20000");
 		defaultProperty.setProperty("fanfoudroid.http.readTimeout", "120000");
 		defaultProperty.setProperty("fanfoudroid.http.retryCount", "3");
 		defaultProperty.setProperty("fanfoudroid.http.retryIntervalSecs", "10");
@@ -87,12 +82,8 @@ public class Configuration {
 		String t4jProps = "fanfoudroid.properties";
 		boolean loaded = loadProperties(defaultProperty, "."
 				+ File.separatorChar + t4jProps)
-				|| loadProperties(
-						defaultProperty,
-						Configuration.class.getResourceAsStream("/WEB-INF/"
-								+ t4jProps))
-				|| loadProperties(defaultProperty,
-						Configuration.class.getResourceAsStream("/" + t4jProps));
+				|| loadProperties(defaultProperty,Configuration.class.getResourceAsStream("/WEB-INF/"+ t4jProps))
+				|| loadProperties(defaultProperty,Configuration.class.getResourceAsStream("/" + t4jProps));
 	}
 
 	private static boolean loadProperties(Properties props, String path) {
