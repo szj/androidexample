@@ -55,6 +55,9 @@ import eriji.com.oauth.XAuthClient;
 public class Weibo extends WeiboSupport implements java.io.Serializable {
 	public static final String TAG = "Weibo_API";
 
+	public String tmp="";
+	
+	
 	public static final String APP_SOURCE = Configuration.getSource();
 	public static final String CONSUMER_KEY = Configuration.getOAuthConsumerKey();
 	public static final String CONSUMER_SECRET = Configuration.getOAuthConsumerSecret();
@@ -846,8 +849,10 @@ public class Weibo extends WeiboSupport implements java.io.Serializable {
 	 * @since fanfoudroid 0.5.0
 	 */
 	public User showUser(String id) throws HttpException {
-		return new User(get(getBaseURL() + "users/show.json",
-				createParams(new BasicNameValuePair("id", id)), true));
+//		return new User(get(getBaseURL() + "users/show.json",
+//				createParams(new BasicNameValuePair("id", id)), true));
+		
+		return new User();
 	}
 
 	/**

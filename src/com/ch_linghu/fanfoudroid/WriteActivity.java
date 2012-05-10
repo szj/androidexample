@@ -389,8 +389,7 @@ public class WriteActivity extends BaseActivity {
 			}
 
 			// Update status
-			mTweetEdit = new TweetEdit(mTweetEditText,
-					(TextView) findViewById(R.id.chars_text));
+			mTweetEdit = new TweetEdit(mTweetEditText,(TextView) findViewById(R.id.chars_text));
 			if (TwitterApplication.mPref.getBoolean(Preferences.USE_ENTER_SEND,
 					false)) {
 				mTweetEdit.setOnKeyListener(tweetEnterHandler);

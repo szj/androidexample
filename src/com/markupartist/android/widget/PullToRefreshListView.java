@@ -79,45 +79,43 @@ public class PullToRefreshListView extends ListView implements
 	}
 
 	private void init(Context context) {
-
+		
 		GestureDetector localGestureDetector = new GestureDetector(this);
 		this.mDetector = localGestureDetector;
-
+		
 		// Load all of the animations we need in code rather than through XML
 		mFlipAnimation = new RotateAnimation(0, -180,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
+		
 		mFlipAnimation.setInterpolator(new LinearInterpolator());
 		mFlipAnimation.setDuration(200);
 		mFlipAnimation.setFillAfter(true);
+		
+		
 		mReverseFlipAnimation = new RotateAnimation(-180, 0,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
+		
 		mReverseFlipAnimation.setInterpolator(new LinearInterpolator());
 		mReverseFlipAnimation.setDuration(200);
 		mReverseFlipAnimation.setFillAfter(true);
-
-		mInflater = (LayoutInflater) context
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-		mRefreshView = (LinearLayout) mInflater.inflate(
-				R.layout.pull_to_refresh_header, null);
-
-		mRefreshViewText = (TextView) mRefreshView
-				.findViewById(R.id.pull_to_refresh_text);
-		mRefreshViewImage = (ImageView) mRefreshView
-				.findViewById(R.id.pull_to_refresh_image);
-		mRefreshViewProgress = (ProgressBar) mRefreshView
-				.findViewById(R.id.pull_to_refresh_progress);
-		mRefreshViewLastUpdated = (TextView) mRefreshView
-				.findViewById(R.id.pull_to_refresh_updated_at);
-
+		
+		mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		
+		mRefreshView = (LinearLayout) mInflater.inflate(R.layout.pull_to_refresh_header, null);
+		
+		mRefreshViewText = (TextView) mRefreshView.findViewById(R.id.pull_to_refresh_text);
+		mRefreshViewImage = (ImageView) mRefreshView.findViewById(R.id.pull_to_refresh_image);
+		mRefreshViewProgress = (ProgressBar) mRefreshView.findViewById(R.id.pull_to_refresh_progress);
+		mRefreshViewLastUpdated = (TextView) mRefreshView.findViewById(R.id.pull_to_refresh_updated_at);
+		
 		mRefreshViewImage.setMinimumHeight(50);
 		mRefreshView.setOnClickListener(new OnClickRefreshListener());
 		mRefreshOriginalTopPadding = mRefreshView.getPaddingTop();
-
+		
 		mRefreshState = TAP_TO_REFRESH;
-
+		
 		addHeaderView(mRefreshView);
 
 		super.setOnScrollListener(this);
@@ -319,8 +317,7 @@ public class PullToRefreshListView extends ListView implements
 			// mRefreshViewText.setText(R.string.pull_to_refresh_tap_label);//点击刷新是否有用
 			mRefreshViewText.setText(R.string.pull_to_refresh_pull_label);
 			// Replace refresh drawable with arrow drawable
-			mRefreshViewImage
-					.setImageResource(R.drawable.ic_pulltorefresh_arrow);
+			mRefreshViewImage.setImageResource(R.drawable.ic_pulltorefresh_arrow);
 			// Clear the full rotation animation
 			mRefreshViewImage.clearAnimation();
 			// Hide progress bar and arrow.
@@ -504,16 +501,14 @@ public class PullToRefreshListView extends ListView implements
 				if ((mRefreshView.getBottom() >= mRefreshViewHeight + MAXHEIGHT || mRefreshView
 						.getTop() >= 0) && mRefreshState != RELEASE_TO_REFRESH) {
 					//this.mPadding+=distanceY;//备用
-					mRefreshViewText
-							.setText(R.string.pull_to_refresh_release_label);
+					mRefreshViewText.setText(R.string.pull_to_refresh_release_label);
 					mRefreshViewImage.clearAnimation();
 					mRefreshViewImage.startAnimation(mFlipAnimation);
 					mRefreshState = RELEASE_TO_REFRESH;
 				} else if (mRefreshView.getBottom() < mRefreshViewHeight
 						+ MAXHEIGHT
 						&& mRefreshState != PULL_TO_REFRESH) {
-					mRefreshViewText
-							.setText(R.string.pull_to_refresh_pull_label);
+					mRefreshViewText.setText(R.string.pull_to_refresh_pull_label);
 					if (mRefreshState != TAP_TO_REFRESH) {
 						mRefreshViewImage.clearAnimation();
 						mRefreshViewImage.startAnimation(mReverseFlipAnimation);

@@ -1,0 +1,73 @@
+{
+    "statuses_count": 17149,
+    "description": "Hacker Advocate looking for interesting people and projects. Drupal and Twitter API developer. Currently learning Python, App Engine, Ruby on Rails, and jQuery.",
+    "show_all_inline_media": false,
+    "lang": "en",
+    "profile_use_background_image": false,
+    "time_zone": "Pacific Time (US & Canada)",
+    "favourites_count": 483,
+    "created_at": "Sun Oct 14 12:50:47 +0000 2007",
+    "location": "Seattle, WA",
+    "status": {
+        "in_reply_to_user_id": null,
+        "in_reply_to_status_id": null,
+        "geo": null,
+        "created_at": "Fri Aug 20 08:39:14 +0000 2010",
+        "coordinates": null,
+        "retweeted": false,
+        "favorited": false,
+        "truncated": false,
+        "contributors": null,
+        "source": "web",
+        "place": {
+            "bounding_box": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-122.324689, 47.611409],
+                        [-122.324689, 47.611409],
+                        [-122.324689, 47.611409],
+                        [-122.324689, 47.611409]
+                    ]
+                ]
+            },
+            "attributes": {
+                "street_address": "1215 Seneca St"
+            },
+            "full_name": "Tuscany Apartments, Seattle",
+            "place_type": "poi",
+            "name": "Tuscany Apartments",
+            "country": "The United States of America",
+            "country_code": "US",
+            "id": "adb50bed081f9502",
+            "url": "http://api.twitter.com/1/geo/id/adb50bed081f9502.json"
+        },
+        "in_reply_to_screen_name": null,
+        "retweet_count": null,
+        "id": 21648851863,
+        "text": "One quarter of a century..."
+    },
+    "contributors_enabled": false,
+    "notifications": null,
+    "profile_background_color": "ffffff",
+    "geo_enabled": true,
+    "profile_background_image_url": "http://a3.twimg.com/profile_background_images/63275387/White_Crystal.jpg",
+    "following": null,
+    "profile_text_color": "454545",
+    "verified": false,
+    "profile_background_tile": false,
+    "follow_request_sent": null,
+    "profile_link_color": "33ccff",
+    "protected": false,
+    "profile_image_url": "http://a3.twimg.com/profile_images/54160223/chart-black-small_normal.png",
+    "profile_sidebar_fill_color": "ffffff",
+    "followers_count": 2206,
+    "name": "Abraham Williams",
+    "screen_name": "abraham",
+    "id": 9436992,
+    "listed_count": 295,
+    "utc_offset": -28800,
+    "friends_count": 412,
+    "profile_sidebar_border_color": "12BEF2",
+    "url": "http://abrah.am/"
+}

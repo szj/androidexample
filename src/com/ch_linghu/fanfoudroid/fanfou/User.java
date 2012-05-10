@@ -122,7 +122,53 @@ public class User extends WeiboResponse implements java.io.Serializable {
 	}
 
 	User() {
+		id = "id";
+		name = "name";
+		screenName = "screen_name";
+		location = "location";
+		gender = "gender";
+		birthday ="birthday";
+		description = "description";
+		profileImageUrl = "profile_image_url";
+		url = "url";
+		isProtected = true;
+		followersCount = 10;
 
+		profileBackgroundColor = "profile_background_color";
+		profileTextColor ="profile_text_color";
+		profileLinkColor = "profile_link_color";
+		profileSidebarFillColor = "profile_sidebar_fill_color";
+		profileSidebarBorderColor = "profile_sidebar_border_color";
+		friendsCount =10;
+
+		//createdAt = parseDate("2012-02-01", "EEE MMM dd HH:mm:ss z yyyy");
+	    createdAt =new Date();
+
+		favouritesCount = 10;
+		utcOffset = 10;
+		// timeZone = json.getString("time_zone");
+		profileBackgroundImageUrl =  "profile_background_image_url";
+		profileBackgroundTile = "profile_background_tile";
+		following =true;
+		notificationEnabled = true;
+		statusesCount = 10;
+//		if (!json.isNull("status")) {
+//			JSONObject status = json.getJSONObject("status");
+//			statusCreatedAt = parseDate(status.getString("created_at"),
+//					"EEE MMM dd HH:mm:ss z yyyy");
+//			statusId = status.getString("id");
+//			statusText = status.getString("text");
+//			statusSource = status.getString("source");
+//			statusTruncated = status.getBoolean("truncated");
+//			// statusInReplyToStatusId =
+//			// status.getString("in_reply_to_status_id");
+//			statusInReplyToStatusId = status
+//					.getString("in_reply_to_lastmsg_id"); // 饭否不知为什么把这个参数的名称改了
+//			statusInReplyToUserId = status.getString("in_reply_to_user_id");
+//			statusFavorited = status.getBoolean("favorited");
+//			statusInReplyToScreenName = status
+//					.getString("in_reply_to_screen_name");
+//		}
 	}
 
 	private void init(JSONObject json) throws HttpException {
